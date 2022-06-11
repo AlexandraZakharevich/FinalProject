@@ -56,6 +56,9 @@
 		05998A172854A70100D5B8D6 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				05998A342854A86500D5B8D6 /* Cells */,
+				05998A2D2854A79300D5B8D6 /* Models */,
+				05998A2C2854A78700D5B8D6 /* ViewControllers */,
 				05998A182854A70100D5B8D6 /* AppDelegate.swift */,
 				05998A1A2854A70100D5B8D6 /* SceneDelegate.swift */,
 				05998A1C2854A70100D5B8D6 /* ViewController.swift */,
@@ -65,6 +68,75 @@
 				05998A262854A70400D5B8D6 /* Info.plist */,
 			);
 			path = FinalProject;
+			sourceTree = "<group>";
+		};
+		05998A2C2854A78700D5B8D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				05998A332854A85000D5B8D6 /* MyGroupsVC */,
+				05998A322854A84600D5B8D6 /* MyFrendsVC */,
+				05998A312854A80B00D5B8D6 /* PhotoGalaryVC */,
+				05998A302854A7FF00D5B8D6 /* ProfileVC */,
+				05998A2F2854A7E200D5B8D6 /* MainVC */,
+				05998A2E2854A7D600D5B8D6 /* LoginVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		05998A2D2854A79300D5B8D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05998A2E2854A7D600D5B8D6 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		05998A2F2854A7E200D5B8D6 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		05998A302854A7FF00D5B8D6 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		05998A312854A80B00D5B8D6 /* PhotoGalaryVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhotoGalaryVC;
+			sourceTree = "<group>";
+		};
+		05998A322854A84600D5B8D6 /* MyFrendsVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyFrendsVC;
+			sourceTree = "<group>";
+		};
+		05998A332854A85000D5B8D6 /* MyGroupsVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyGroupsVC;
+			sourceTree = "<group>";
+		};
+		05998A342854A86500D5B8D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
