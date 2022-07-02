@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053AC57128637B9100CD39BB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AC57028637B9100CD39BB /* AuthService.swift */; };
 		055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD8382856676E0007FDC1 /* TabBarController.swift */; };
 		055FD83C285668B30007FDC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD83A285668B30007FDC1 /* MainVC.swift */; };
 		055FD83D285668B30007FDC1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD83B285668B30007FDC1 /* MainVC.xib */; };
@@ -18,6 +19,8 @@
 		055FD849285669020007FDC1 /* MyGroupsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD847285669020007FDC1 /* MyGroupsVC.xib */; };
 		055FD84C285670D30007FDC1 /* PhotoGaleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD84A285670D30007FDC1 /* PhotoGaleryVC.swift */; };
 		055FD84D285670D30007FDC1 /* PhotoGaleryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD84B285670D30007FDC1 /* PhotoGaleryVC.xib */; };
+		05744FC2285F96D60079FD45 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05744FC0285F96D60079FD45 /* LoginVC.swift */; };
+		05744FC3285F96D60079FD45 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05744FC1285F96D60079FD45 /* LoginVC.xib */; };
 		05998A192854A70100D5B8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05998A182854A70100D5B8D6 /* AppDelegate.swift */; };
 		05998A1B2854A70100D5B8D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05998A1A2854A70100D5B8D6 /* SceneDelegate.swift */; };
 		05998A1D2854A70100D5B8D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05998A1C2854A70100D5B8D6 /* ViewController.swift */; };
@@ -29,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		00B516750CB872D40C6A5C55 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		053AC57028637B9100CD39BB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		055FD8382856676E0007FDC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		055FD83A285668B30007FDC1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		055FD83B285668B30007FDC1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		055FD847285669020007FDC1 /* MyGroupsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyGroupsVC.xib; sourceTree = "<group>"; };
 		055FD84A285670D30007FDC1 /* PhotoGaleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGaleryVC.swift; sourceTree = "<group>"; };
 		055FD84B285670D30007FDC1 /* PhotoGaleryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoGaleryVC.xib; sourceTree = "<group>"; };
+		05744FC0285F96D60079FD45 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		05744FC1285F96D60079FD45 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		05998A152854A70100D5B8D6 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05998A182854A70100D5B8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05998A1A2854A70100D5B8D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05744FBF285F87800079FD45 /* API's */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "API's";
+			sourceTree = "<group>";
+		};
 		05998A0C2854A70100D5B8D6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +98,7 @@
 		05998A172854A70100D5B8D6 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				05744FBF285F87800079FD45 /* API's */,
 				05998A342854A86500D5B8D6 /* Cells */,
 				05998A2D2854A79300D5B8D6 /* Models */,
 				05998A2C2854A78700D5B8D6 /* ViewControllers */,
@@ -116,6 +130,7 @@
 		05998A2D2854A79300D5B8D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				053AC57028637B9100CD39BB /* AuthService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +138,8 @@
 		05998A2E2854A7D600D5B8D6 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
+				05744FC0285F96D60079FD45 /* LoginVC.swift */,
+				05744FC1285F96D60079FD45 /* LoginVC.xib */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -262,6 +279,7 @@
 				055FD83D285668B30007FDC1 /* MainVC.xib in Resources */,
 				05998A222854A70400D5B8D6 /* Assets.xcassets in Resources */,
 				05998A202854A70100D5B8D6 /* Main.storyboard in Resources */,
+				05744FC3285F96D60079FD45 /* LoginVC.xib in Resources */,
 				055FD845285668EE0007FDC1 /* MyFrendsVC.xib in Resources */,
 				055FD841285668C40007FDC1 /* ProfileVC.xib in Resources */,
 			);
@@ -320,6 +338,8 @@
 				05998A1D2854A70100D5B8D6 /* ViewController.swift in Sources */,
 				055FD848285669020007FDC1 /* MyGroupsVC.swift in Sources */,
 				055FD844285668EE0007FDC1 /* MyFrendsVC.swift in Sources */,
+				05744FC2285F96D60079FD45 /* LoginVC.swift in Sources */,
+				053AC57128637B9100CD39BB /* AuthService.swift in Sources */,
 				055FD84C285670D30007FDC1 /* PhotoGaleryVC.swift in Sources */,
 				055FD83C285668B30007FDC1 /* MainVC.swift in Sources */,
 				055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */,

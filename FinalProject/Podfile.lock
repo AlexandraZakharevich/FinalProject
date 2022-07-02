@@ -15,11 +15,13 @@ PODS:
   - Realm/Headers (10.25.0)
   - RealmSwift (10.25.0):
     - Realm (= 10.25.0)
+  - VK-ios-sdk (1.6.2)
 
 DEPENDENCIES:
   - Moya
   - Moya-ObjectMapper
   - RealmSwift
+  - VK-ios-sdk
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - ObjectMapper
     - Realm
     - RealmSwift
+    - VK-ios-sdk
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -37,7 +40,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   Realm: 22a82aaa0e73f3483e3a6df32549c4c5cd34aa63
   RealmSwift: c2a635212400923edd3f828b8a37d55d3eb31863
+  VK-ios-sdk: 5bcf00a2014a7323f98db9328b603d4f96635caa
 
-PODFILE CHECKSUM: 815f1ff326ca8cb20025e555916a62a8a29a5fac
+PODFILE CHECKSUM: f75bf551d212b961d4a261a14c86af64fb5acc6d
 
 COCOAPODS: 1.11.3
