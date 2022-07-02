@@ -31,6 +31,8 @@
 		053CC903287076BD00352540 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC902287076BD00352540 /* Constants.swift */; };
 		053CC9062870776F00352540 /* NewsfeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC9042870776F00352540 /* NewsfeedCell.swift */; };
 		053CC9072870776F00352540 /* NewsfeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053CC9052870776F00352540 /* NewsfeedCell.xib */; };
+		053CC90A28708E7900352540 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC90928708E7900352540 /* Constraints.swift */; };
+		053CC90C28708E9200352540 /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC90B28708E9200352540 /* String + Height.swift */; };
 		055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD8382856676E0007FDC1 /* TabBarController.swift */; };
 		055FD83C285668B30007FDC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD83A285668B30007FDC1 /* MainVC.swift */; };
 		055FD83D285668B30007FDC1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD83B285668B30007FDC1 /* MainVC.xib */; };
@@ -79,6 +81,8 @@
 		053CC902287076BD00352540 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		053CC9042870776F00352540 /* NewsfeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCell.swift; sourceTree = "<group>"; };
 		053CC9052870776F00352540 /* NewsfeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedCell.xib; sourceTree = "<group>"; };
+		053CC90928708E7900352540 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		053CC90B28708E9200352540 /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
 		055FD8382856676E0007FDC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		055FD83A285668B30007FDC1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		055FD83B285668B30007FDC1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		053CC90828708E5500352540 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				053CC90928708E7900352540 /* Constraints.swift */,
+				053CC90B28708E9200352540 /* String + Height.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		05744FBF285F87800079FD45 /* API's */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +198,7 @@
 		05998A172854A70100D5B8D6 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				053CC90828708E5500352540 /* Helpers */,
 				053CC8DE28706D8F00352540 /* View's */,
 				05744FBF285F87800079FD45 /* API's */,
 				05998A342854A86500D5B8D6 /* Cells */,
@@ -438,6 +452,7 @@
 			files = (
 				055FD840285668C40007FDC1 /* ProfileVC.swift in Sources */,
 				053CC8F22870724300352540 /* GalleryCollectionViewCell.swift in Sources */,
+				053CC90A28708E7900352540 /* Constraints.swift in Sources */,
 				053CC8D728706C7000352540 /* UserResponse.swift in Sources */,
 				053CC8E42870701200352540 /* FooterView.swift in Sources */,
 				053CC9012870768B00352540 /* NewsfeedCellLayoutCalculator.swift in Sources */,
@@ -463,6 +478,7 @@
 				053CC8DB28706CE500352540 /* NetworkService.swift in Sources */,
 				055FD83C285668B30007FDC1 /* MainVC.swift in Sources */,
 				053CC8FA2870746500352540 /* NewsfeedWorker.swift in Sources */,
+				053CC90C28708E9200352540 /* String + Height.swift in Sources */,
 				055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */,
 				05998A192854A70100D5B8D6 /* AppDelegate.swift in Sources */,
 				053CC8E8287070CB00352540 /* InsetableTextField.swift in Sources */,

@@ -32,6 +32,12 @@ class FooterView: UIView {
         addSubview(myLabel)
         addSubview(loader)
         
+//        myLabel.anchor(top: topAnchor,
+//                       leading: leadingAnchor,
+//                       bottom: nil,
+//                       trailing: trailingAnchor,
+//                       padding: UIEdgeInsets(top: 8, left: 20, bottom: 777, right: 20))
+        
         myLabel.anchor(top: topAnchor,
                        leading: leadingAnchor,
                        bottom: nil,

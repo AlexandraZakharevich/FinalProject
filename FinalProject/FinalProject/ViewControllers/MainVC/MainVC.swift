@@ -88,7 +88,7 @@ class MainVC: UIViewController, NewsfeedDisplayLogic, NewsfeedCodeCellDelegate  
         topBar.layer.shadowRadius = 8
         self.view.addSubview(topBar)
         
-//        self.navigationController?.hidesBarsOnSwipe = true
+        self.navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.titleView = titleView
     }
@@ -141,7 +141,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: - UI with .xib
         //-------------------------------------------------
         
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: NewsfeedCell.reuseId, for: indexPath) as! NewsfeedCell
+//                let cell = tableView.dequeueReusableCell(withIdentifier: NewsfeedCell.reuseId, for: indexPath) as! NewsfeedCell
         
         //-------------------------------------------------
         // MARK: - UI with code
