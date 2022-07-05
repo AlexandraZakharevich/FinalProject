@@ -19,6 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llw-68-Sta" customClass="GradientView" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.83137254901960778" green="0.63529411764705879" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-o3-KIB">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,9 +39,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Llw-68-Sta" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5PA-zF-juO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7aZ-o3-KIB" secondAttribute="bottom" id="9fV-IK-Xmn"/>
                 <constraint firstItem="7aZ-o3-KIB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="D0t-1i-w0c"/>
+                <constraint firstItem="Llw-68-Sta" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PL7-eG-vjY"/>
                 <constraint firstItem="7aZ-o3-KIB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sqo-Ox-v4H"/>
+                <constraint firstItem="Llw-68-Sta" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fbF-wW-Qa1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Llw-68-Sta" secondAttribute="bottom" id="fdo-7Z-Vgt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Llw-68-Sta" secondAttribute="trailing" id="iZB-3w-4RC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aZ-o3-KIB" secondAttribute="trailing" id="jao-Pj-qay"/>
             </constraints>
             <point key="canvasLocation" x="117" y="98"/>

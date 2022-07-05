@@ -16,6 +16,7 @@ class TabBarController: UITabBarController {
     }
     
     private func setupcontrollers() {
+//        let mainVC = UINavigationController(rootViewController: MainVC(nibName: String(describing: MainVC.self), bundle: nil))
         let mainVC = UINavigationController(rootViewController: MainVC(nibName: String(describing: MainVC.self), bundle: nil))
         let profileVC = UINavigationController(rootViewController: ProfileVC(nibName: String(describing: ProfileVC.self), bundle: nil))
         let myGroupsVC = UINavigationController(rootViewController: MyGroupsVC(nibName: String(describing: MyGroupsVC.self), bundle: nil))

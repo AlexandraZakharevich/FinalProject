@@ -9,21 +9,39 @@ import UIKit
 
 class MyFrendsVC: UIViewController {
 
+    @IBOutlet weak var friendTable: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        friendTable.delegate = self
+        friendTable.dataSource = self
+        
+        friendTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
+
+        
     }
 
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MyFrendsVC : UITableViewDelegate {
+    
+}
+
+extension MyFrendsVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = friendTable.dequeueReusableCell(withIdentifier: String(describing: FriendsAndGroupCell.self), for: indexPath)
+as! FriendsAndGroupCell
+        cell.photoImage.layer.cornerRadius = cell.photoImage.frame.height / 2
+        return cell
+        
+    }
+    
+    
 }
