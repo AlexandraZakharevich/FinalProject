@@ -15,7 +15,9 @@ class FriendsAndGroupCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        photoImage.layer.cornerRadius = 15
+        
+       
+        
         
     }
 

@@ -20,7 +20,8 @@ class MyFrendsVC: UIViewController {
         
         friendTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
 
-        
+//        friendTable.separatorColor = .red
+//        friendTable.
     }
 
 }
@@ -39,6 +40,10 @@ extension MyFrendsVC : UITableViewDataSource {
         let cell = friendTable.dequeueReusableCell(withIdentifier: String(describing: FriendsAndGroupCell.self), for: indexPath)
 as! FriendsAndGroupCell
         cell.photoImage.layer.cornerRadius = cell.photoImage.frame.height / 2
+//        cell.layer.cornerRadius = CGRect(
+        
+        
+        
         return cell
         
     }

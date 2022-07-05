@@ -53,6 +53,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.83137254900000002" green="0.63529411759999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="nameLabel" destination="fwF-ij-7Vk" id="rar-sN-Hl3"/>
                 <outlet property="photoImage" destination="mOf-3V-FfX" id="kBh-kW-xcv"/>

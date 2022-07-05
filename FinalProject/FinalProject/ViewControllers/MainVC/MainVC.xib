@@ -34,20 +34,23 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-o3-KIB">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="H0P-CO-2wX"/>
+                        <outlet property="delegate" destination="-1" id="hKM-3v-FPL"/>
+                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Llw-68-Sta" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5PA-zF-juO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7aZ-o3-KIB" secondAttribute="bottom" id="9fV-IK-Xmn"/>
                 <constraint firstItem="7aZ-o3-KIB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="D0t-1i-w0c"/>
                 <constraint firstItem="Llw-68-Sta" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PL7-eG-vjY"/>
                 <constraint firstItem="7aZ-o3-KIB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sqo-Ox-v4H"/>
-                <constraint firstItem="Llw-68-Sta" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fbF-wW-Qa1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Llw-68-Sta" secondAttribute="bottom" id="fdo-7Z-Vgt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Llw-68-Sta" secondAttribute="trailing" id="iZB-3w-4RC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aZ-o3-KIB" secondAttribute="trailing" id="jao-Pj-qay"/>
+                <constraint firstItem="Llw-68-Sta" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tif-px-W0s"/>
             </constraints>
             <point key="canvasLocation" x="117" y="98"/>
         </view>
