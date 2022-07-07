@@ -7,6 +7,8 @@
 
 import Foundation
 
+//https://api.vk.com/method/users.get?user_ids=86032642&fields=bdate&access_token=vk1.a.QFLqNlbA6uy_CDg8UCly-f5ZGWg-8-lRu_vAPL_8uCmOK3XOfGVyECxRqZkibP0lFRZVmfPH0oo5-cNU-3onB6sNRdXXTKPAHpPW8U6K3kF5eO9C9jK5U6pLm-sZukfgKrwbMiAVuLenZ4GcU6UA64L_d2FhHrWKeQCvsbbIrW1zLRvPf3uKmRpj2hf6NLMY&v=5.131
+
 protocol DataFetcher {
     func getFeed(nextBatchFrom: String?, response: @escaping (FeedResponse?) -> Void)
     func getUser(response: @escaping (UserResponse?) -> Void)

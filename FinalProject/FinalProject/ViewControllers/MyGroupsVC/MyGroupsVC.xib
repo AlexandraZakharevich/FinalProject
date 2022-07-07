@@ -19,7 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R6i-hx-YvZ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1g5-Uf-zOg" customClass="GradientView" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                            <color key="value" red="0.83137254901960778" green="0.63529411764705879" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R6i-hx-YvZ">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -28,9 +40,13 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="R6i-hx-YvZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DJA-fq-kk4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1g5-Uf-zOg" secondAttribute="bottom" id="Gar-MU-pLX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R6i-hx-YvZ" secondAttribute="trailing" id="JVk-Vp-cRY"/>
                 <constraint firstItem="R6i-hx-YvZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UDb-f9-YOL"/>
+                <constraint firstItem="1g5-Uf-zOg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oTW-ZL-3xZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R6i-hx-YvZ" secondAttribute="bottom" id="pEY-o0-9gT"/>
+                <constraint firstItem="1g5-Uf-zOg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vLc-fY-aGn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1g5-Uf-zOg" secondAttribute="trailing" id="yUe-vx-kSg"/>
             </constraints>
             <point key="canvasLocation" x="-39" y="-11"/>
         </view>

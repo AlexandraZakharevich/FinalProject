@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Foundation
 
 class MyFrendsVC: UIViewController {
 
     @IBOutlet weak var friendTable: UITableView!
+    
+    private var searchField = InsetableTextField()
     
     
     override func viewDidLoad() {
@@ -20,14 +23,19 @@ class MyFrendsVC: UIViewController {
         
         friendTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
 
-//        friendTable.separatorColor = .red
-//        friendTable.
+        friendTable.backgroundColor  = .clear
+        
+        
+       
+
     }
+   
 
 }
 
 
 extension MyFrendsVC : UITableViewDelegate {
+  
     
 }
 
@@ -40,13 +48,15 @@ extension MyFrendsVC : UITableViewDataSource {
         let cell = friendTable.dequeueReusableCell(withIdentifier: String(describing: FriendsAndGroupCell.self), for: indexPath)
 as! FriendsAndGroupCell
         cell.photoImage.layer.cornerRadius = cell.photoImage.frame.height / 2
-//        cell.layer.cornerRadius = CGRect(
-        
-        
+        cell.viewCell.layer.cornerRadius = 20
+        cell.selectionStyle = .none
+
         
         return cell
         
     }
+    
+    
     
     
 }

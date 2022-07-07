@@ -7,6 +7,9 @@
 
 import Foundation
 
+
+
+
 protocol Networking {
     func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> Void)
 }
@@ -23,6 +26,7 @@ final class NetworkService: Networking {
         let task = createDataTask(from: request, completion: completion)
         task.resume()
         print(url)
+        print(token)
     }
     
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {

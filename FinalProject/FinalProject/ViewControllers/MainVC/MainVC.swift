@@ -81,16 +81,18 @@ class MainVC: UIViewController, NewsfeedDisplayLogic, NewsfeedCodeCellDelegate  
     private func setupTopBars() {
         let frameStatusBar = UIApplication.shared.statusBarFrame
         let topBar = UIView(frame: frameStatusBar)
-        topBar.backgroundColor = .white
+        topBar.backgroundColor = .clear
         topBar.layer.shadowColor = UIColor.black.cgColor
         topBar.layer.shadowOpacity = 0.3
         topBar.layer.shadowOffset = CGSize.zero
         topBar.layer.shadowRadius = 8
         self.view.addSubview(topBar)
 
-        self.navigationController?.hidesBarsOnSwipe = true
+//        self.navigationController?.hidesBarsOnSwipe = true
+
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.titleView = titleView
+        self.navigationItem.titleView?.backgroundColor = .clear
     }
 
     @objc private func refresh() {
