@@ -9,10 +9,14 @@ import UIKit
 import Foundation
 
 class MyFrendsVC: UIViewController {
+   
+    
 
     @IBOutlet weak var friendTable: UITableView!
     
-    private var searchField = InsetableTextField()
+//    private var searchField = InsetableTextField()
+    
+     var searchController =  UISearchController()
     
     
     override func viewDidLoad() {
@@ -24,10 +28,20 @@ class MyFrendsVC: UIViewController {
         friendTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
 
         friendTable.backgroundColor  = .clear
-        
+//        self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
+//        self.tabBarController?.navigationItem.title?.removeAll()
+        addSearch()
         
        
 
+    }
+    
+    private func addSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        
     }
    
 
@@ -56,7 +70,11 @@ as! FriendsAndGroupCell
         
     }
     
-    
-    
+}
+
+extension MyFrendsVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
     
 }

@@ -35,6 +35,8 @@
 		053CC90C28708E9200352540 /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC90B28708E9200352540 /* String + Height.swift */; };
 		053CC90F28747E7000352540 /* FriendsAndGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC90D28747E7000352540 /* FriendsAndGroupCell.swift */; };
 		053CC91028747E7000352540 /* FriendsAndGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */; };
+		053CC963287891D500352540 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC961287891D500352540 /* PhotoCell.swift */; };
+		053CC964287891D500352540 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053CC962287891D500352540 /* PhotoCell.xib */; };
 		055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD8382856676E0007FDC1 /* TabBarController.swift */; };
 		055FD83C285668B30007FDC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD83A285668B30007FDC1 /* MainVC.swift */; };
 		055FD83D285668B30007FDC1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD83B285668B30007FDC1 /* MainVC.xib */; };
@@ -87,6 +89,8 @@
 		053CC90B28708E9200352540 /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
 		053CC90D28747E7000352540 /* FriendsAndGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAndGroupCell.swift; sourceTree = "<group>"; };
 		053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsAndGroupCell.xib; sourceTree = "<group>"; };
+		053CC961287891D500352540 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		053CC962287891D500352540 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		055FD8382856676E0007FDC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		055FD83A285668B30007FDC1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		055FD83B285668B30007FDC1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				053CC9042870776F00352540 /* NewsfeedCell.swift */,
 				053CC90D28747E7000352540 /* FriendsAndGroupCell.swift */,
 				053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */,
+				053CC961287891D500352540 /* PhotoCell.swift */,
+				053CC962287891D500352540 /* PhotoCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053CC964287891D500352540 /* PhotoCell.xib in Resources */,
 				05998A252854A70400D5B8D6 /* LaunchScreen.storyboard in Resources */,
 				055FD84D285670D30007FDC1 /* PhotoGaleryVC.xib in Resources */,
 				055FD849285669020007FDC1 /* MyGroupsVC.xib in Resources */,
@@ -487,6 +494,7 @@
 				055FD83C285668B30007FDC1 /* MainVC.swift in Sources */,
 				053CC8FA2870746500352540 /* NewsfeedWorker.swift in Sources */,
 				053CC90C28708E9200352540 /* String + Height.swift in Sources */,
+				053CC963287891D500352540 /* PhotoCell.swift in Sources */,
 				055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */,
 				05998A192854A70100D5B8D6 /* AppDelegate.swift in Sources */,
 				053CC8E8287070CB00352540 /* InsetableTextField.swift in Sources */,
