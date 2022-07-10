@@ -37,6 +37,11 @@
 		053CC91028747E7000352540 /* FriendsAndGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */; };
 		053CC963287891D500352540 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC961287891D500352540 /* PhotoCell.swift */; };
 		053CC964287891D500352540 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053CC962287891D500352540 /* PhotoCell.xib */; };
+		053CC966287979B400352540 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC965287979B400352540 /* PhotoVC.swift */; };
+		053CC9682879D23C00352540 /* FriendsResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC9672879D23C00352540 /* FriendsResponce.swift */; };
+		053CC96D2879F04100352540 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC96C2879F04100352540 /* NetworkManager.swift */; };
+		053CC96F2879F04E00352540 /* BackendAPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC96E2879F04E00352540 /* BackendAPi.swift */; };
+		053CC973287AC42F00352540 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CC972287AC42F00352540 /* Models.swift */; };
 		055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD8382856676E0007FDC1 /* TabBarController.swift */; };
 		055FD83C285668B30007FDC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FD83A285668B30007FDC1 /* MainVC.swift */; };
 		055FD83D285668B30007FDC1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FD83B285668B30007FDC1 /* MainVC.xib */; };
@@ -91,6 +96,11 @@
 		053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsAndGroupCell.xib; sourceTree = "<group>"; };
 		053CC961287891D500352540 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		053CC962287891D500352540 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		053CC965287979B400352540 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		053CC9672879D23C00352540 /* FriendsResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsResponce.swift; sourceTree = "<group>"; };
+		053CC96C2879F04100352540 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		053CC96E2879F04E00352540 /* BackendAPi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPi.swift; sourceTree = "<group>"; };
+		053CC972287AC42F00352540 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		055FD8382856676E0007FDC1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		055FD83A285668B30007FDC1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		055FD83B285668B30007FDC1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -175,12 +185,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		053CC96B2879DBC600352540 /* With Moya */ = {
+			isa = PBXGroup;
+			children = (
+				053CC96C2879F04100352540 /* NetworkManager.swift */,
+				053CC96E2879F04E00352540 /* BackendAPi.swift */,
+			);
+			path = "With Moya";
+			sourceTree = "<group>";
+		};
 		05744FBF285F87800079FD45 /* API's */ = {
 			isa = PBXGroup;
 			children = (
 				053CC8D828706CA200352540 /* API.swift */,
 				053CC8DA28706CE500352540 /* NetworkService.swift */,
 				053CC8DC28706D4C00352540 /* NetworkDataFetcher.swift */,
+				053CC96B2879DBC600352540 /* With Moya */,
 			);
 			path = "API's";
 			sourceTree = "<group>";
@@ -243,6 +263,8 @@
 				053AC57028637B9100CD39BB /* AuthService.swift */,
 				053CC8D428706C2600352540 /* FeedResponse.swift */,
 				053CC8D628706C7000352540 /* UserResponse.swift */,
+				053CC9672879D23C00352540 /* FriendsResponce.swift */,
+				053CC972287AC42F00352540 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +310,7 @@
 			children = (
 				055FD84A285670D30007FDC1 /* PhotoGaleryVC.swift */,
 				055FD84B285670D30007FDC1 /* PhotoGaleryVC.xib */,
+				053CC965287979B400352540 /* PhotoVC.swift */,
 			);
 			path = PhotoGalaryVC;
 			sourceTree = "<group>";
@@ -474,12 +497,15 @@
 				055FD848285669020007FDC1 /* MyGroupsVC.swift in Sources */,
 				053CC903287076BD00352540 /* Constants.swift in Sources */,
 				053CC8F82870743900352540 /* NewsfeedModels.swift in Sources */,
+				053CC973287AC42F00352540 /* Models.swift in Sources */,
 				055FD844285668EE0007FDC1 /* MyFrendsVC.swift in Sources */,
 				053CC8EE2870719300352540 /*  GalleryCollectionView.swift in Sources */,
 				053CC8E028706DA300352540 /* GradientView.swift in Sources */,
 				053CC8F4287073C000352540 /* NewsfeedInteractor.swift in Sources */,
 				053CC8D528706C2600352540 /* FeedResponse.swift in Sources */,
+				053CC966287979B400352540 /* PhotoVC.swift in Sources */,
 				053CC8E228706DB200352540 /* WebImageView.swift in Sources */,
+				053CC96D2879F04100352540 /* NetworkManager.swift in Sources */,
 				053CC8FC2870748500352540 /* NewsfeedRouter.swift in Sources */,
 				053CC8D928706CA200352540 /* API.swift in Sources */,
 				053CC8F6287073EE00352540 /* NewsfeedPresenter.swift in Sources */,
@@ -496,11 +522,13 @@
 				053CC90C28708E9200352540 /* String + Height.swift in Sources */,
 				053CC963287891D500352540 /* PhotoCell.swift in Sources */,
 				055FD8392856676E0007FDC1 /* TabBarController.swift in Sources */,
+				053CC96F2879F04E00352540 /* BackendAPi.swift in Sources */,
 				05998A192854A70100D5B8D6 /* AppDelegate.swift in Sources */,
 				053CC8E8287070CB00352540 /* InsetableTextField.swift in Sources */,
 				05998A1B2854A70100D5B8D6 /* SceneDelegate.swift in Sources */,
 				053CC9062870776F00352540 /* NewsfeedCell.swift in Sources */,
 				053CC8E62870709600352540 /* TitleView.swift in Sources */,
+				053CC9682879D23C00352540 /* FriendsResponce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

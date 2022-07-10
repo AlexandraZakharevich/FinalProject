@@ -11,6 +11,7 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
 //    private let collectionVView = UICollectionView(frame: .zero, collectionViewLayout: PhotoGaleryVC.createLayout() )
     @IBOutlet weak var collectionView: UICollectionView!
+//    let chosePhotoView: [imageArr] = []
     
 //    let images = [
 //        UIImage(named: "image1"),
@@ -22,7 +23,7 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-//        view.addSubview(collectionVView)
+//        view.addSubview(chosePhotoView)
         
         collectionView.register(UINib(nibName: String(describing: PhotoCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: PhotoCell.self))
         collectionView.collectionViewLayout = PhotoGaleryVC.createLayout()
@@ -38,18 +39,18 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 //        super.viewDidLayoutSubviews()
 //        collectionView.frame = view.bounds
 //    }
-    // Ниже способ через композицию
+    // 1. Ниже способ через композицию
     static func createLayout() -> UICollectionViewCompositionalLayout {
 
         // Item
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), //2/3
                                                                              heightDimension: .fractionalHeight(1)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
         
         let verticalStackItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                                                           heightDimension: .fractionalHeight(0.5)))
         
-        verticalStackItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        verticalStackItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
         
         let verticalStackGroup = NSCollectionLayoutGroup.vertical (
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3),
@@ -59,12 +60,14 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         let tripletItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1)))
         
-        tripletItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        tripletItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
         
         let tripletHorizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(1)),
             subitem: tripletItem, count: 2)
+        
+//        tripletHorizontalGroup.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         //Group
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -72,13 +75,14 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
                                                        subitems: [item, verticalStackGroup])
         
         let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                                                                heightDimension: .fractionalHeight(1.0)),
+                                                                                                heightDimension: .fractionalHeight(1)),
                                                              subitems: [ horizontalGroup, tripletHorizontalGroup])
         
        
         
         //Sections
         let section = NSCollectionLayoutSection(group: verticalGroup)
+       
         
         //Return
         return UICollectionViewCompositionalLayout(section: section)
@@ -98,7 +102,17 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 //        cell.imageViewCell.image = images.randomElement()
         return cell
     }
-        // Ниже простой колекшн с фото
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let selectedCell = collectionView.cellForItem(at: indexPath) as! PhotoCell
+//        selectedCell.selectedIndex = indexPath.row
+//        selectedCell.imageArr = selectedCell.images
+        
+        let vc = UIImage()
+//        vc.selectedIndex = indexPath.row
+        
+    }
+        // 2. Ниже простой колекшн с фото
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: (view.frame.size.width / 3) - 3,
@@ -113,7 +127,7 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 //        return 4
 //    }
-//
+////
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
 //    }
