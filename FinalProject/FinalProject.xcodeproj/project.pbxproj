@@ -61,6 +61,8 @@
 		05998A202854A70100D5B8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05998A1E2854A70100D5B8D6 /* Main.storyboard */; };
 		05998A222854A70400D5B8D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05998A212854A70400D5B8D6 /* Assets.xcassets */; };
 		05998A252854A70400D5B8D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05998A232854A70400D5B8D6 /* LaunchScreen.storyboard */; };
+		05E670EA287C22F400152E39 /* FriendCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E670E8287C22F400152E39 /* FriendCollectionCell.swift */; };
+		05E670EB287C22F400152E39 /* FriendCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E670E9287C22F400152E39 /* FriendCollectionCell.xib */; };
 		E7C012F22D8AA425F486D9B6 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B516750CB872D40C6A5C55 /* Pods_FinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		05998A212854A70400D5B8D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05998A242854A70400D5B8D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05998A262854A70400D5B8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E670E8287C22F400152E39 /* FriendCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionCell.swift; sourceTree = "<group>"; };
+		05E670E9287C22F400152E39 /* FriendCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionCell.xib; sourceTree = "<group>"; };
 		DC1F692CB2C8F904A0BFC6FC /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		E63E39E8BA7578E8E24C30E7 /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,6 +346,8 @@
 				053CC90E28747E7000352540 /* FriendsAndGroupCell.xib */,
 				053CC961287891D500352540 /* PhotoCell.swift */,
 				053CC962287891D500352540 /* PhotoCell.xib */,
+				05E670E8287C22F400152E39 /* FriendCollectionCell.swift */,
+				05E670E9287C22F400152E39 /* FriendCollectionCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				053CC964287891D500352540 /* PhotoCell.xib in Resources */,
 				05998A252854A70400D5B8D6 /* LaunchScreen.storyboard in Resources */,
 				055FD84D285670D30007FDC1 /* PhotoGaleryVC.xib in Resources */,
+				05E670EB287C22F400152E39 /* FriendCollectionCell.xib in Resources */,
 				055FD849285669020007FDC1 /* MyGroupsVC.xib in Resources */,
 				055FD83D285668B30007FDC1 /* MainVC.xib in Resources */,
 				053CC9072870776F00352540 /* NewsfeedCell.xib in Resources */,
@@ -516,6 +523,7 @@
 				053CC90F28747E7000352540 /* FriendsAndGroupCell.swift in Sources */,
 				053AC57128637B9100CD39BB /* AuthService.swift in Sources */,
 				055FD84C285670D30007FDC1 /* PhotoGaleryVC.swift in Sources */,
+				05E670EA287C22F400152E39 /* FriendCollectionCell.swift in Sources */,
 				053CC8DB28706CE500352540 /* NetworkService.swift in Sources */,
 				055FD83C285668B30007FDC1 /* MainVC.swift in Sources */,
 				053CC8FA2870746500352540 /* NewsfeedWorker.swift in Sources */,
