@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - Haptica (3.0.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya-ObjectMapper (2.9):
@@ -18,6 +19,7 @@ PODS:
   - VK-ios-sdk (1.6.2)
 
 DEPENDENCIES:
+  - Haptica
   - Moya
   - Moya-ObjectMapper
   - RealmSwift
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Haptica
     - Moya
     - Moya-ObjectMapper
     - ObjectMapper
@@ -35,6 +38,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Haptica: 23497230b2d7476621f7860263ae0667279a0a89
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
@@ -42,6 +46,6 @@ SPEC CHECKSUMS:
   RealmSwift: c2a635212400923edd3f828b8a37d55d3eb31863
   VK-ios-sdk: 5bcf00a2014a7323f98db9328b603d4f96635caa
 
-PODFILE CHECKSUM: f75bf551d212b961d4a261a14c86af64fb5acc6d
+PODFILE CHECKSUM: c97eb11b7c775826e0a2eab504b3920cfd222940
 
 COCOAPODS: 1.11.3

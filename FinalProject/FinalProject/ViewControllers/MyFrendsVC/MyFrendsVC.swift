@@ -9,6 +9,10 @@ import UIKit
 import Foundation
 
 class MyFrendsVC: UIViewController {
+    
+    var friendsCount: FriendsResponse?
+    var friensName: FriendItem?
+    
    
     
 
@@ -56,6 +60,7 @@ extension MyFrendsVC : UITableViewDelegate {
 extension MyFrendsVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +69,7 @@ as! FriendsAndGroupCell
         cell.photoImage.layer.cornerRadius = cell.photoImage.frame.height / 2
         cell.viewCell.layer.cornerRadius = 20
         cell.selectionStyle = .none
+//        cell.nameLabel = friensName[indexPath.row].
 
         
         return cell

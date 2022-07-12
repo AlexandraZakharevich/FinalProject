@@ -9,6 +9,7 @@ target 'FinalProject' do
   pod 'Moya-ObjectMapper'
   pod 'RealmSwift'
   pod "VK-ios-sdk" 
+  pod "Haptica" 
 
   
 

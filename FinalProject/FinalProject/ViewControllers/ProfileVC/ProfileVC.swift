@@ -58,8 +58,13 @@ class ProfileVC: UIViewController {
         postCollectionView.backgroundColor = .white
         
         friendCollectionView.dataSource = self
+        friendCollectionView.delegate = self
         friendCollectionView.register(UINib(nibName: String(describing: FriendCollectionCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: FriendCollectionCell.self))
         
+        
+       
+        
+       
         
         
         
@@ -84,7 +89,9 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+      return 20
+        
+     
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -95,3 +102,13 @@ extension ProfileVC: UICollectionViewDataSource {
     
     
 }
+
+extension ProfileVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == friendCollectionView {
+            return CGSize(width: 120, height: 90)
+        }
+        return .zero
+    }
+}
+

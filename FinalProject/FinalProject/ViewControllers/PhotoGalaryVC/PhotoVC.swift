@@ -10,7 +10,7 @@ import UIKit
 class PhotoVC: UIViewController {
 
     var selectedIndex: Int = 0
-//    var imageArr = []
+//    var imageArr: it
     
     fileprivate let scrollView: UIScrollView = {
         let sv = UIScrollView()

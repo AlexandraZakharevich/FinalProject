@@ -11,16 +11,16 @@ class PhotoCell: UICollectionViewCell {
 
     @IBOutlet weak var imageViewCell: UIImageView!
     
-    let images = [
-        UIImage(named: "image1"),
-        UIImage(named: "image2"),
-        UIImage(named: "image3")].compactMap({$0})
+//    let images = [
+//        UIImage(named: "image1"),
+//        UIImage(named: "image2"),
+//        UIImage(named: "image3")].compactMap({$0})
     
     override func awakeFromNib() {
         super.awakeFromNib()
         imageViewCell.contentMode = .scaleAspectFill
-        imageViewCell.image = images.randomElement()
-       
+//        imageViewCell.image = images.randomElement()
+//
         imageViewCell.clipsToBounds = true
        
 
@@ -34,6 +34,7 @@ class PhotoCell: UICollectionViewCell {
 //    override func prepareForReuse() {
 //        super.prepareForReuse()
 //        imageViewCell.image = nil
+//
 //    }
 }
 

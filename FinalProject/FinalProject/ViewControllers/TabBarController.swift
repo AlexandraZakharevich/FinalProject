@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Haptica
 
 class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.delegate = self
         setupcontrollers()
     }
     
@@ -35,3 +36,10 @@ class TabBarController: UITabBarController {
     }
 
 }
+extension TabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        print("privet")
+        Haptic.impact(.heavy).generate()
+    }
+}
+

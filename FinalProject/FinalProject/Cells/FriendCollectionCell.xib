@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVv-Nl-aHu">
-                                <rect key="frame" x="20" y="5" width="50" height="50"/>
+                                <rect key="frame" x="20" y="10" width="50" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CXI-pn-F9L"/>
@@ -29,9 +29,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alexandra Zakharevich" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BF-C9-l1E">
-                                <rect key="frame" x="5" y="60" width="80" height="19.5"/>
+                                <rect key="frame" x="10" y="65" width="70" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="zLD-1I-vhc"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="EuA-EH-7D7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
@@ -40,14 +40,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vVv-Nl-aHu" firstAttribute="top" secondItem="zut-pl-dCV" secondAttribute="top" constant="5" id="9EY-GM-xx6"/>
-                            <constraint firstItem="6BF-C9-l1E" firstAttribute="leading" secondItem="zut-pl-dCV" secondAttribute="leading" constant="5" id="DsS-h2-yNA"/>
+                            <constraint firstItem="6BF-C9-l1E" firstAttribute="centerX" secondItem="zut-pl-dCV" secondAttribute="centerX" id="5a4-QE-krW"/>
+                            <constraint firstItem="vVv-Nl-aHu" firstAttribute="top" secondItem="zut-pl-dCV" secondAttribute="top" constant="10" id="9EY-GM-xx6"/>
+                            <constraint firstItem="6BF-C9-l1E" firstAttribute="leading" secondItem="zut-pl-dCV" secondAttribute="leading" constant="10" id="W9b-T7-N1g"/>
                             <constraint firstAttribute="width" constant="90" id="Zha-2e-hhr"/>
+                            <constraint firstAttribute="trailing" secondItem="6BF-C9-l1E" secondAttribute="trailing" constant="10" id="bI9-4I-6Iw"/>
                             <constraint firstItem="vVv-Nl-aHu" firstAttribute="centerX" secondItem="zut-pl-dCV" secondAttribute="centerX" id="btj-DY-sZo"/>
                             <constraint firstItem="6BF-C9-l1E" firstAttribute="top" secondItem="vVv-Nl-aHu" secondAttribute="bottom" constant="5" id="czf-Ie-FYq"/>
                             <constraint firstAttribute="height" constant="90" id="jXA-Pp-Ga9"/>
-                            <constraint firstAttribute="trailing" secondItem="6BF-C9-l1E" secondAttribute="trailing" constant="5" id="lfF-Zi-htk"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6BF-C9-l1E" secondAttribute="bottom" constant="10" id="mIp-Dg-UnN"/>
+                            <constraint firstAttribute="bottom" secondItem="6BF-C9-l1E" secondAttribute="bottom" constant="15" id="mIp-Dg-UnN"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,7 +65,7 @@
                 <outlet property="friendCollectionImage" destination="vVv-Nl-aHu" id="vKz-og-WFE"/>
                 <outlet property="friendNameCollectionLabel" destination="6BF-C9-l1E" id="h46-pF-kfF"/>
             </connections>
-            <point key="canvasLocation" x="166.66666666666669" y="127.23214285714285"/>
+            <point key="canvasLocation" x="165.42056074766353" y="126.99784017278618"/>
         </collectionViewCell>
     </objects>
     <resources>

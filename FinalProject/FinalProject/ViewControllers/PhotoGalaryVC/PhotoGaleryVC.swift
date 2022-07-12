@@ -7,27 +7,37 @@
 
 import UIKit
 
+
 class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-//    private let collectionVView = UICollectionView(frame: .zero, collectionViewLayout: PhotoGaleryVC.createLayout() )
+
     @IBOutlet weak var collectionView: UICollectionView!
-//    let chosePhotoView: [imageArr] = []
     
-//    let images = [
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3")]//.compactMap({$0})
-    
+    let images = [
+        UIImage(named: "image1"),
+        UIImage(named: "image2"),
+        UIImage(named: "image3"),
+        UIImage(named: "image1"),
+        UIImage(named: "image2"),
+        UIImage(named: "image3"),
+        UIImage(named: "image1"),
+        UIImage(named: "image2"),
+        UIImage(named: "image3"),
+    ]//.compactMap({$0})
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Фотографии"
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Arial", size: 25)!]
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-//        view.addSubview(chosePhotoView)
+
         
         collectionView.register(UINib(nibName: String(describing: PhotoCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: PhotoCell.self))
         collectionView.collectionViewLayout = PhotoGaleryVC.createLayout()
       
+//        collectionView.reloadData()
         
       
         
@@ -82,6 +92,7 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         //Sections
         let section = NSCollectionLayoutSection(group: verticalGroup)
+
        
         
         //Return
@@ -92,24 +103,22 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return images.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoCell.self), for: indexPath) as! PhotoCell
-//        cell.imageViewCell.image = images[indexPath.row]
-//        cell.imageViewCell.image = images.randomElement()
+        cell.imageViewCell.image = images[indexPath.row]
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let selectedCell = collectionView.cellForItem(at: indexPath) as! PhotoCell
-//        selectedCell.selectedIndex = indexPath.row
-//        selectedCell.imageArr = selectedCell.images
+        let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
+        let item = images[indexPath.row]
+//        photoVC.
         
-        let vc = UIImage()
-//        vc.selectedIndex = indexPath.row
         
     }
         // 2. Ниже простой колекшн с фото
