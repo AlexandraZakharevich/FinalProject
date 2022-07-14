@@ -59,7 +59,7 @@ struct NetworkDataFetcher: DataFetcher {
     // запрос получения списка друзей
        func getFriends(response: @escaping (FriendsResponse?) -> Void) {
 
-           var params = ["fields":  "first_name, last_name, photo_100"]
+           var params = ["fields":  "photo_100"]
    //        params["start_from"] = nextBatchFrom
            networking.request(path: API.friends, params: params) { (data, error) in
                if let error = error {

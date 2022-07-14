@@ -7,16 +7,17 @@
 
 import Foundation
 
+
 struct FriendsResponseWrapped: Decodable {
     let response: FriendsResponse
 }
-
+// MARK: - Response
 struct FriendsResponse: Decodable {
-    let count: Int?
+    let count: Int
     var item: [FriendItem]
     
 }
-
+// MARK: - Item
 struct FriendItem: Decodable {
     let first_name: String
     let last_name: String
