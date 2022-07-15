@@ -13,8 +13,8 @@ import Foundation
 protocol DataFetcher {
     func getFeed(nextBatchFrom: String?, response: @escaping (FeedResponse?) -> Void)
     func getUser(response: @escaping (UserResponse?) -> Void)
-    func getFriends( response: @escaping (FriendsResponse?) -> Void)
-    func getGroups( response: @escaping (GroupsResponse?) -> Void)
+//    func getFriends( response: @escaping (FriendsResponse?) -> Void)
+//    func getGroups( response: @escaping (GroupsResponse?) -> Void)
 }
 
 struct NetworkDataFetcher: DataFetcher {
@@ -56,39 +56,39 @@ struct NetworkDataFetcher: DataFetcher {
         }
     }
     
-    // запрос получения списка друзей
-       func getFriends(response: @escaping (FriendsResponse?) -> Void) {
-
-           var params = ["fields":  "photo_100"]
-   //        params["start_from"] = nextBatchFrom
-           networking.request(path: API.friends, params: params) { (data, error) in
-               if let error = error {
-                   print("Error received requesting data: \(error.localizedDescription)")
-                   response(nil)
-               }
-
-               let decoded = self.decodeJSON(type: FriendsResponseWrapped.self, from: data)
-               response(decoded?.response)
-//               print(response)
-           }
-       }
-    
-    // запрос получения списка групп
-       func getGroups(response: @escaping (GroupsResponse?) -> Void) {
-//            let extended = "1"
-           var params = ["extended": "1", "fields": "status"]
-   //        params["start_from"] = nextBatchFrom
-           networking.request(path: API.groups, params: params) { (data, error) in
-               if let error = error {
-                   print("Error received requesting data: \(error.localizedDescription)")
-                   response(nil)
-               }
-
-               let decoded = self.decodeJSON(type: GroupsResponseWrapped.self, from: data)
-               response(decoded?.response)
-//               print(response)
-           }
-       }
+//    // запрос получения списка друзей
+//       func getFriends(response: @escaping (FriendsResponse?) -> Void) {
+//
+//           var params = ["fields":  "photo_100"]
+//   //        params["start_from"] = nextBatchFrom
+//           networking.request(path: API.friends, params: params) { (data, error) in
+//               if let error = error {
+//                   print("Error received requesting data: \(error.localizedDescription)")
+//                   response(nil)
+//               }
+//
+//               let decoded = self.decodeJSON(type: FriendsResponseWrapped.self, from: data)
+//               response(decoded?.response)
+////               print(response)
+//           }
+//       }
+//    
+//    // запрос получения списка групп
+//       func getGroups(response: @escaping (GroupsResponse?) -> Void) {
+////            let extended = "1"
+//           var params = ["extended": "1", "fields": "status"]
+//   //        params["start_from"] = nextBatchFrom
+//           networking.request(path: API.groups, params: params) { (data, error) in
+//               if let error = error {
+//                   print("Error received requesting data: \(error.localizedDescription)")
+//                   response(nil)
+//               }
+//
+//               let decoded = self.decodeJSON(type: GroupsResponseWrapped.self, from: data)
+//               response(decoded?.response)
+////               print(response)
+//           }
+//       }
     
     
     

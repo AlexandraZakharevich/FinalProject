@@ -10,8 +10,7 @@ import Foundation
 
 class MyFrendsVC: UIViewController {
     
-    var friendsCount: FriendsResponse?
-    var friensName: FriendItem?
+   
     
    
     

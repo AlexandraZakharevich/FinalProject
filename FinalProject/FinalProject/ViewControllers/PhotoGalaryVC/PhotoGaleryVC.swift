@@ -10,7 +10,8 @@ import UIKit
 
 class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-
+    var galleryPhotos: Urls?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let images = [
@@ -38,6 +39,19 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         collectionView.collectionViewLayout = PhotoGaleryVC.createLayout()
       
 //        collectionView.reloadData()
+        
+        NetworkManager.getPhotos { [weak self] result in
+            guard let image = result.url else { return }
+            collectionView.setImageFromUrl(image)
+//            self?.imageView.contentMode = .scaleAspectFill
+            
+               print("okey")
+    
+              
+               
+           } failure: {
+               print("oshibka")
+           }
         
       
         
@@ -114,9 +128,9 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
-        let item = images[indexPath.row]
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
+//        let item = images[indexPath.row]
 //        photoVC.
         
         

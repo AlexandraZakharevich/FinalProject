@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 
-    //https://api.vk.com/method/photos.getAll?user_ids=86032642&v=5.131&fields=&access_token=vk1.a.78xBl3xmXcWTjIm6mf6gtsVAtYQNfbn2BNgfH9JStDKtPtmEvxfeoPnOtlJzAiCkgxqZC6juab4BPONiYl84NmcMq0ugnV4ZfznByCkS6_5IfWnPnkYh5jL4sLlm9jKPD5Esdmfyra41jiyVfO52YYzIMDqhAW8Fc0RVd694seJfyt6_b_P7zPnmiaOHeUIn
+    //https://api.vk.com/method/photos.getAll?user_ids=86032642&v=5.131&access_token=vk1.a.78xBl3xmXcWTjIm6mf6gtsVAtYQNfbn2BNgfH9JStDKtPtmEvxfeoPnOtlJzAiCkgxqZC6juab4BPONiYl84NmcMq0ugnV4ZfznByCkS6_5IfWnPnkYh5jL4sLlm9jKPD5Esdmfyra41jiyVfO52YYzIMDqhAW8Fc0RVd694seJfyt6_b_P7zPnmiaOHeUIn
 
 // Модель фото для галлереи
 class PhotoResponse: Mappable {
