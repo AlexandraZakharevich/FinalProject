@@ -10,6 +10,8 @@ import UIKit
 class MyGroupsVC: UIViewController {
     @IBOutlet weak var groupTable: UITableView!
     
+    var group: GroupResponse?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         groupTable.delegate = self
@@ -18,7 +20,8 @@ class MyGroupsVC: UIViewController {
         groupTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
 
         groupTable.backgroundColor = .clear
-      
+       
+        
     }
 
 }

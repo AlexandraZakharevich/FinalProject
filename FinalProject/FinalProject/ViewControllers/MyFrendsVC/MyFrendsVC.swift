@@ -35,6 +35,8 @@ class MyFrendsVC: UIViewController {
 //        self.tabBarController?.navigationItem.title?.removeAll()
         addSearch()
         
+//        guard let photo_200_orig = 
+//        NetworkManager.getFriends(photo_200_orig: , success: <#T##((FriendResponse) -> ())?##((FriendResponse) -> ())?##(FriendResponse) -> ()#>)
        
 
     }

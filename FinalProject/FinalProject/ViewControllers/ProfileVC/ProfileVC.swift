@@ -24,6 +24,11 @@ class ProfileVC: UIViewController {
    
     @IBOutlet weak var nameProfilleLabel: UILabel!
     @IBOutlet weak var statusProfileLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var educationLabel: UILabel!
+    @IBOutlet weak var subcribesLabel: UILabel!
+    @IBOutlet weak var workPlaceLabel: UILabel!
+    
     
     @IBOutlet weak var postCollectionView: UICollectionView!
     @IBOutlet weak var friendCollectionView: UICollectionView!
@@ -62,9 +67,20 @@ class ProfileVC: UIViewController {
         friendCollectionView.register(UINib(nibName: String(describing: FriendCollectionCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: FriendCollectionCell.self))
         
         
-       
+        guard let city = cityLabel.text,
+              let education = educationLabel.text,
+              let status = statusProfileLabel.text,
+              let followers_count = subcribesLabel.text,
+              let bdate = workPlaceLabel.text
+//              let profilePhoto =
+        else { return }
         
-       
+//        NetworkManager.getProfile(city: city, education: education, status: status,followers_count: followers_count, photo_100: <#String?#>, bdate: bdate) { result in
+//            print("You get profile")
+//        } failure: {
+//            print("You  don't get profile")
+//        }
+
         
         
         
@@ -83,6 +99,10 @@ class ProfileVC: UIViewController {
         navigationController?.pushViewController(friendVC, animated: true)
     }
     
+    @IBAction func showMoreInfoAction(_ sender: Any) {
+        let moreInfoVC = UINavigationController(rootViewController: MoreInfoVC(nibName: String(describing: MoreInfoVC.self), bundle: nil))
+        present(moreInfoVC, animated: true)
+    }
     
 
 }

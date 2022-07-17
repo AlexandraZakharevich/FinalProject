@@ -39,24 +39,15 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         collectionView.collectionViewLayout = PhotoGaleryVC.createLayout()
       
 //        collectionView.reloadData()
-        
-        NetworkManager.getPhotos { [weak self] result in
-            guard let image = result.url else { return }
-            collectionView.setImageFromUrl(image)
-//            self?.imageView.contentMode = .scaleAspectFill
-            
-               print("okey")
-    
-              
-               
-           } failure: {
-               print("oshibka")
-           }
-        
       
-        
-        
-
+//        NetworkManager.getPhotos { [weak self] result in
+//            guard let image = result.url else { return }
+//            self.photoCell?.setImageFromUrl(image)
+////            self?.imageView.contentMode = .scaleAspectFill
+//               print("okey")
+//           } failure: {
+//               print("oshibka")
+//           }
     }
     
 //    override func viewDidLayoutSubviews() {
@@ -134,7 +125,7 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 //        photoVC.
         
         
-    }
+//    }
         // 2. Ниже простой колекшн с фото
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
