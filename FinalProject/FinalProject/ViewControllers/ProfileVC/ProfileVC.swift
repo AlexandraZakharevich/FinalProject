@@ -105,6 +105,12 @@ class ProfileVC: UIViewController {
         statusProfileLabel.text = ""
         }
         
+        if let followers = profile.followersCount {
+            subcribesLabel.text = "Подписчики: \(followers)"
+        } else {
+            subcribesLabel.text = "Подписчики: нет"
+        }
+        
         if let  photoProfile = profile.photo100 {
             photoProfileImage.setImageFromUrl(photoProfile)
         }
@@ -157,9 +163,11 @@ extension ProfileVC: UICollectionViewDataSource {
 extension ProfileVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == friendCollectionView {
-            return CGSize(width: 120, height: 90)
+            return CGSize(width: 85, height: 110)
         }
         return .zero
     }
 }
+
+
 

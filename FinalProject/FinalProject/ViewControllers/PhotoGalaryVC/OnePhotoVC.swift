@@ -11,7 +11,7 @@ class OnePhotoVC: UIViewController {
 
     @IBOutlet weak var onePhotoImage: UIImageView!
     
-    var photos: Urls?
+    var photos: Photos?
     
     
     override func viewDidLoad() {

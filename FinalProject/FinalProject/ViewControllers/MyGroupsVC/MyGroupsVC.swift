@@ -12,6 +12,7 @@ class MyGroupsVC: UIViewController {
     @IBOutlet weak var groupTable: UITableView!
     
     var groups = [Groups]()
+    var searchController =  UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class MyGroupsVC: UIViewController {
         groupTable.register(UINib(nibName: String(describing: FriendsAndGroupCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FriendsAndGroupCell.self))
 
         groupTable.backgroundColor = .clear
+        addSearch()
        
         
     
@@ -34,6 +36,14 @@ class MyGroupsVC: UIViewController {
     }
 
 }
+    
+    private func addSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        
+    }
 }
 
 extension MyGroupsVC: UITableViewDelegate {
@@ -49,10 +59,12 @@ extension MyGroupsVC: UITableViewDataSource {
         let cell = groupTable.dequeueReusableCell(withIdentifier: String(describing: FriendsAndGroupCell.self), for: indexPath) as! FriendsAndGroupCell
         cell.setupgroupCell(cel: groups[indexPath.row])
         cell.selectionStyle = .none
-        
         return cell
     }
-    
-    
+}
+
+extension MyGroupsVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+    }
 }
 

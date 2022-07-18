@@ -16,12 +16,39 @@ class MoreInfoVC: UIViewController {
     @IBOutlet weak var friendsLabel: UILabel!
     @IBOutlet weak var groupsLabel: UILabel!
     
+    var profile: ProfileResponse?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Подробнее"
         
+        
+        NetworkManager.getProfile { result in
+            self.profile = result[0]
+            self.setupMoreInfo()
+            print("You get profile")
+        } failure: {
+            print("You  don't get profile")
+        }
+        
+    }
+    
+    func setupMoreInfo(){
+        guard let profile = self.profile else {return}
+
+        
+        if let followers = profile.followersCount {
+            folowersLabel.text = "Подписчики: \(followers)"
+        } else {
+            folowersLabel.text  = "Подписчики: нет"
+        }
+        
+        
+        statusLabel.text = profile.status != nil ? profile.status : "Статус: не указан"
+        cityLabel.text = profile.city?.title != nil ? profile.city!.title : "Город: не указано"
+        bDate.text = profile.bdate != nil ? profile.bdate : "Дата Рождения не указана"
+      
     }
 
 
@@ -38,3 +65,7 @@ class MoreInfoVC: UIViewController {
     }
     
 }
+
+//extension MoreInfoVC: UITableViewDelegate{
+//    
+//}

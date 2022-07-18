@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoCell: UICollectionViewCell {
 
@@ -28,9 +29,9 @@ class PhotoCell: UICollectionViewCell {
         imageViewCell.frame = contentView.bounds
     }
     
-    func setupCell(url: Urls){
-        if let photoUrl = url.url {
-           imageViewCell.setImageFromUrl(photoUrl)
+    func setupGalleryCell(url: Photos){
+        if let photoUrl = url.sizes[0].url {
+            imageViewCell.sd_setImage(with: URL(string: photoUrl))
         }
         
     }

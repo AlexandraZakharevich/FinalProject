@@ -73,12 +73,12 @@ class NetworkManager {
             }
     }
     
-    static func getPhotos(success: (([PhotoResponse]) ->())?,  failure: (() -> ())? = nil) {
+    static func getPhotos(success: (([Photos]) ->())?,  failure: (() -> ())? = nil) {
         provider.request(.getPhotos) { result in
             switch result {
                 
             case .success(let response):
-                guard let result = try? response.mapArray(PhotoResponse.self, atKeyPath: "response")
+                guard let result = try? response.mapArray(Photos.self, atKeyPath: "response.items")
                         
                 else {
                     failure?()

@@ -74,8 +74,9 @@ extension BackendAPI: TargetType {
             params["fields"] = "photo_200_orig, status"
         case .getGroups:
             params["fields"] = "photo_100, status"
+            params["extended"] = 1
         case .getPhotos:
-            return nil
+            return params
         }
      return params
     }

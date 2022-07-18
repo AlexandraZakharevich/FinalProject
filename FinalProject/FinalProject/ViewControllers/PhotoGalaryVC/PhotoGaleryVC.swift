@@ -11,32 +11,7 @@ import UIKit
 class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     
-    
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-//    let images = [
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3"),
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3"),
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3"),
-//    ]//.compactMap({$0})
-//    var image: UIImageView? { [
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3"),
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3"),
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3")]
-//    }
 
     var profileGallery = [Photos]()
     
@@ -57,7 +32,8 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 //        collectionView.reloadData()
       
         NetworkManager.getPhotos { result in
-//            self.profileGallery = result
+            self.profileGallery = result
+            self.collectionView.reloadData()
 //            self.setupProfile()
             print("You get photos")
         } failure: {
@@ -123,29 +99,24 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return images.count
-//        return galleryPhotos.count
-        return 30
+        return profileGallery.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoCell.self), for: indexPath) as! PhotoCell
-//        cell.imageViewCell.image = images[indexPath.row]
-//        cell.imageViewCell.image = galleryPhotos[indexPath.row]
-//        cell.setupCell(url: galleryPhotos[indexPath.row])
-
+        cell.setupGalleryCell(url: profileGallery[indexPath.row])
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let onePhotoVC = OnePhotoVC(nibName: String(describing: OnePhotoVC.self), bundle: nil)
-//        let photo = images[indexPath.row]
-//        onePhotoVC.onePhotoImage = UIImageView(image: photo)
-//        navigationController?.pushViewController(onePhotoVC, animated: true)
-//        
-//        
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let onePhotoVC = OnePhotoVC(nibName: String(describing: OnePhotoVC.self), bundle: nil)
+        onePhotoVC.photos = profileGallery[indexPath.row]
+//        onePhotoVC.photos = UIImageView(image: photo) //photo
+        navigationController?.pushViewController(onePhotoVC, animated: true)
+        
+        
+    }
         // 2. Ниже простой колекшн с фото
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
