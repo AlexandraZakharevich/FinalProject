@@ -11,13 +11,11 @@ import Foundation
 class MyFrendsVC: UIViewController {
     
    
-    
+    var friends  = [Friends]()
    
-    
 
     @IBOutlet weak var friendTable: UITableView!
-    
-//    private var searchField = InsetableTextField()
+
     
      var searchController =  UISearchController()
     
@@ -35,11 +33,19 @@ class MyFrendsVC: UIViewController {
 //        self.tabBarController?.navigationItem.title?.removeAll()
         addSearch()
         
-//        guard let photo_200_orig = 
-//        NetworkManager.getFriends(photo_200_orig: , success: <#T##((FriendResponse) -> ())?##((FriendResponse) -> ())?##(FriendResponse) -> ()#>)
+
+        NetworkManager.getFriends { friends in
+            self.friends = friends
+            self.friendTable.reloadData()
+            
+            print("You get friends")
+        } failure: {
+            print("You  don't get friends")
+        }
        
 
     }
+    
     
     private func addSearch() {
         searchController.searchResultsUpdater = self
@@ -60,19 +66,15 @@ extension MyFrendsVC : UITableViewDelegate {
 
 extension MyFrendsVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return friends.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = friendTable.dequeueReusableCell(withIdentifier: String(describing: FriendsAndGroupCell.self), for: indexPath)
 as! FriendsAndGroupCell
-        cell.photoImage.layer.cornerRadius = cell.photoImage.frame.height / 2
-        cell.viewCell.layer.cornerRadius = 20
         cell.selectionStyle = .none
-//        cell.nameLabel = friensName[indexPath.row].
-
-        
+        cell.setupfriendCell(cel: friends[indexPath.row])
         return cell
         
     }

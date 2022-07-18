@@ -12,18 +12,19 @@ import Moya_ObjectMapper
 class NetworkManager {
     static let provider = MoyaProvider<BackendAPI>(plugins: [NetworkLoggerPlugin()])
     
-    static func getProfile(city: City?, bdate: String?, education: String?, status: String?, photo_100: String?, followers_count: Int?, success: ((ProfileResponse) ->())?, failure: (() -> ())? = nil) {
-        provider.request(.getProfile(city: city, bdate: bdate, education: education, status: status, photo_100: photo_100, followers_count: followers_count)) { result in
+    static func getProfile(success: (([ProfileResponse]) ->())?, failure: (() -> ())? = nil) {
+        provider.request(.getProfile) { result in
             switch result {
-                
+    
             case .success(let response):
-                guard let result = try? response.mapObject(ProfileResponse.self)
-                        
+                guard let result = try? response.mapArray(ProfileResponse.self, atKeyPath: "response")
+
                 else {
                     failure?()
                     return
                 }
-                print("Good")
+                print("\(result.count)")
+                print("Good ProfileResponse")
                 success?(result)
             case .failure(_):
                 print("Error")
@@ -32,19 +33,19 @@ class NetworkManager {
         }
     }
     
-    static func getFriends(photo_200_orig: String?, success: ((FriendResponse) ->())?, failure: (() -> ())? = nil) {
-        provider.request(.getFriends(photo_200_orig: photo_200_orig)) { result in
+    static func getFriends(success: (([Friends]) ->())?, failure: (() -> ())? = nil) {
+        provider.request(.getFriends) { result in
             switch result {
                 
             case .success(let response):
-                guard let result = try? response.mapObject(FriendResponse.self)
+                guard let result = try? response.mapObject(FriendResponse.self, atKeyPath: "response")
                         
                 else {
                     failure?()
                     return
                 }
-                print("Good")
-                success?(result)
+                print("Good FriendResponse")
+                success?(result.friendsItems)
             case .failure(_):
                 print("Error")
                 failure?()
@@ -52,19 +53,19 @@ class NetworkManager {
         }
     }
         
-        static func getGroups(status: String?, photo_100: String?, success: ((GroupResponse) ->())?, failure: (() -> ())? = nil) {
-            provider.request(.getGroups(status: status, photo_100: photo_100)) { result in
+        static func getGroups(success: (([Groups]) ->())?, failure: (() -> ())? = nil) {
+            provider.request(.getGroups) { result in
                 switch result {
                     
                 case .success(let response):
-                    guard let result = try? response.mapObject(GroupResponse.self)
+                    guard let result = try? response.mapObject(GroupResponse.self, atKeyPath: "response")
                             
                     else {
                         failure?()
                         return
                     }
-                    print("Good")
-                    success?(result)
+                    print("Good GroupResponse")
+                    success?(result.groupsItems)
                 case .failure(_):
                     print("Error")
                     failure?()
@@ -72,18 +73,18 @@ class NetworkManager {
             }
     }
     
-    static func getPhotos(success: ((Urls) ->())?, failure: (() -> ())? = nil) {
+    static func getPhotos(success: (([PhotoResponse]) ->())?,  failure: (() -> ())? = nil) {
         provider.request(.getPhotos) { result in
             switch result {
                 
             case .success(let response):
-                guard let result = try? response.mapObject(Urls.self)
+                guard let result = try? response.mapArray(PhotoResponse.self, atKeyPath: "response")
                         
                 else {
                     failure?()
                     return
                 }
-                print("Good")
+                print("Good Urls")
                 success?(result)
             case .failure(_):
                 print("Error")

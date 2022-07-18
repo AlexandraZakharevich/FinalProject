@@ -31,6 +31,7 @@ class Friends : Mappable {
         var photo_200_orig: String?
         var first_name: String?
         var last_name: String?
+        var status: String?
         
     
     required init?(map: Map) {
@@ -42,6 +43,7 @@ class Friends : Mappable {
         photo_200_orig    <- map["photo_200_orig"]
         first_name        <- map["first_name"]
         last_name         <- map["last_name"]
+        status            <- map["status"]
        
        }
     

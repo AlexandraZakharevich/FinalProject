@@ -11,10 +11,7 @@ class PhotoCell: UICollectionViewCell {
 
     @IBOutlet weak var imageViewCell: UIImageView!
     
-//    let images = [
-//        UIImage(named: "image1"),
-//        UIImage(named: "image2"),
-//        UIImage(named: "image3")].compactMap({$0})
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +28,12 @@ class PhotoCell: UICollectionViewCell {
         imageViewCell.frame = contentView.bounds
     }
     
+    func setupCell(url: Urls){
+        if let photoUrl = url.url {
+           imageViewCell.setImageFromUrl(photoUrl)
+        }
+        
+    }
 //    override func prepareForReuse() {
 //        super.prepareForReuse()
 //        imageViewCell.image = nil

@@ -13,7 +13,7 @@ import ObjectMapper
 class ProfileResponse: Mappable {
        var id: Int?
        var bdate: String?
-       var city = [City]()
+       var city: City?
        var status: String?
        var followersCount: Int?
        var universityName: String?
@@ -51,8 +51,8 @@ class City: Mappable {
     }
     
     func mapping(map: Map) {
-        id             <- map["photo_100"]
-        title          <- map["status"]
+        id             <- map["id"]
+        title          <- map["title"]
         
        
        }

@@ -8,9 +8,9 @@
 import UIKit
 
 
-protocol UserPhoto {
-    var photoUrlString: String? { get }
-}
+//protocol UserPhoto {
+//    var photoUrlString: String? { get }
+//}
 
 class ProfileVC: UIViewController {
     @IBOutlet weak var nameProfileView: UIView!
@@ -33,7 +33,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var postCollectionView: UICollectionView!
     @IBOutlet weak var friendCollectionView: UICollectionView!
     
-    private let authService = AuthService()
+    var profile: ProfileResponse?
+    var friends  = [Friends]()
     
     
     
@@ -67,24 +68,52 @@ class ProfileVC: UIViewController {
         friendCollectionView.register(UINib(nibName: String(describing: FriendCollectionCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: FriendCollectionCell.self))
         
         
-        guard let city = cityLabel.text,
-              let education = educationLabel.text,
-              let status = statusProfileLabel.text,
-              let followers_count = subcribesLabel.text,
-              let bdate = workPlaceLabel.text
-//              let profilePhoto =
-        else { return }
+       
+
+        NetworkManager.getProfile { result in
+            self.profile = result[0]
+            self.setupProfile()
+            print("You get profile")
+        } failure: {
+            print("You  don't get profile")
+        }
         
-//        NetworkManager.getProfile(city: city, education: education, status: status,followers_count: followers_count, photo_100: <#String?#>, bdate: bdate) { result in
-//            print("You get profile")
-//        } failure: {
-//            print("You  don't get profile")
-//        }
+        NetworkManager.getFriends { friends in
+            self.friends = friends
+            self.friendCollectionView.reloadData()
+            
+            print("You get friends")
+        } failure: {
+            print("You  don't get friends")
+        }
 
         
         
         
 
+    }
+    
+    func setupProfile(){
+        guard let profile = self.profile else {return}
+        guard let firstName = profile.firstName,
+              let lastName = profile.lastName else {return}
+        nameProfilleLabel.text = "\(firstName) \(lastName)"
+        
+        if let status = profile.status {
+            statusProfileLabel.text = status
+        } else {
+        statusProfileLabel.text = ""
+        }
+        
+        if let  photoProfile = profile.photo100 {
+            photoProfileImage.setImageFromUrl(photoProfile)
+        }
+        
+        cityLabel.text = profile.city?.title != nil ? profile.city!.title : "Город: не указано"
+        educationLabel.text = profile.universityName != nil ? profile.universityName : "Oбразование: не указано"
+//        subcribesLabel.text = profile.followersCount != nil ? profile.followersCount : "Подписчиков нет"
+        
+        
     }
     
     
@@ -109,7 +138,7 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 20
+        return friends.count
         
      
     }
@@ -117,6 +146,8 @@ extension ProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = friendCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FriendCollectionCell.self), for: indexPath) as! FriendCollectionCell
         cell.friendCollectionImage.layer.cornerRadius = cell.friendCollectionImage.frame.height / 2
+        cell.setupcollectionCell(cel: friends[indexPath.row])
+        
         return cell
     }
     

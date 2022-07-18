@@ -10,7 +10,7 @@ target 'FinalProject' do
   pod 'RealmSwift'
   pod "VK-ios-sdk" 
   pod "Haptica" 
-
+  pod 'SDWebImage'
   
 
 

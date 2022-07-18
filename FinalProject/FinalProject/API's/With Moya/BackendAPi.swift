@@ -7,17 +7,15 @@
 
 import Foundation
 import Moya
+import VK_ios_sdk
 
 // https://api.vk.com/method/METHOD?PARAMS&access_token=TOKEN&v=V
 
 
-
-
-
 enum BackendAPI{
-    case getProfile(city: City?, bdate: String?, education: String?, status: String?, photo_100: String?, followers_count: Int?)
-    case getFriends(photo_200_orig: String?)
-    case getGroups(status: String?, photo_100: String?)
+    case getProfile
+    case getFriends
+    case getGroups
     case getPhotos
 }
 
@@ -64,19 +62,18 @@ extension BackendAPI: TargetType {
 
     var params: [String: Any]? {
         var params = [String: Any]()
+        params ["access_token"] = VKSdk.accessToken()?.accessToken
+        params["user_ids"] =  VKSdk.accessToken()?.userId
+        params["v"] = "5.131"
+        
+
         switch self {
-        case .getProfile(let city, let bdate, let education, let status, let photo_100, let followers_count):
-            params["fields"] = city
-            params["fields"] = bdate
-            params["fields"] = education
-            params["fields"] = status
-            params["fields"] = photo_100
-            params["fields"] = followers_count
-        case .getFriends(let photo_200_orig):
-            params["fields"] = photo_200_orig
-        case .getGroups(let status, let photo_100):
-            params["fields"] = status
-            params["fields"] = photo_100
+        case .getProfile:
+            params["fields"] = "city, bdate, education, status, photo_100, followers_count"
+        case .getFriends:
+            params["fields"] = "photo_200_orig, status"
+        case .getGroups:
+            params["fields"] = "photo_100, status"
         case .getPhotos:
             return nil
         }
@@ -85,22 +82,14 @@ extension BackendAPI: TargetType {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .getProfile:
-            return  URLEncoding.queryString
-        case .getFriends:
-            return  URLEncoding.queryString
-        case .getGroups:
-            return  URLEncoding.queryString
-        case .getPhotos:
+        case .getProfile, .getFriends, .getGroups, .getPhotos:
             return  URLEncoding.queryString
         }
     }
     
     
     var headers: [String : String]? {
-        return ["v" : "\(API.version)"]
-//        return ["user_ids" : "\(AuthService.)"]
-//        return ["access_token" : "\(AuthService.)"]
+        return nil
     }
     
 }
