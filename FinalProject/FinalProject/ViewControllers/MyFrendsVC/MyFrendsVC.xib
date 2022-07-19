@@ -45,10 +45,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gae-iE-3cu" secondAttribute="trailing" id="EN1-Sh-tes"/>
                 <constraint firstItem="J90-Ml-a16" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FWU-0u-wbC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gae-iE-3cu" secondAttribute="bottom" id="K0G-ne-HWL"/>
-                <constraint firstItem="J90-Ml-a16" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t8X-Sc-zpv"/>
+                <constraint firstItem="J90-Ml-a16" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hfY-eH-0xF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J90-Ml-a16" secondAttribute="trailing" id="wKK-cg-cSm"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="114"/>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </view>
     </objects>
     <resources>

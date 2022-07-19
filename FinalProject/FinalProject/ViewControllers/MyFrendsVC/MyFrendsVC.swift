@@ -15,7 +15,8 @@ class MyFrendsVC: UIViewController {
    
 
     @IBOutlet weak var friendTable: UITableView!
-
+    
+    
     
      var searchController =  UISearchController()
     
@@ -32,7 +33,7 @@ class MyFrendsVC: UIViewController {
 //        self.tabBarController?.navigationItem.titleView?.removeFromSuperview()
 //        self.tabBarController?.navigationItem.title?.removeAll()
         addSearch()
-        
+//        searchField.addTarget(self, action: #selector(textDidChange), for: .allEvents)
 
         NetworkManager.getFriends { friends in
             self.friends = friends
@@ -52,9 +53,22 @@ class MyFrendsVC: UIViewController {
         searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController
-        
+
     }
-   
+//    @objc func textDidChange() {
+//        timer?.invalidate()
+//        timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
+//            self.spinner.startAnimating()
+//            NetworkManager.getUserList(name: self.searchField.text) {
+//                profiles in
+//                self.profiles = profiles
+//                self.spinner.stopAnimating()
+//                self.tableView.reloadData()
+//            } failureBlock: {
+//                self.spinner.stopAnimating()
+//            }
+//        })
+//    }
 
 }
 

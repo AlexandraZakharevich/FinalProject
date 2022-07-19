@@ -30,7 +30,7 @@ class PhotoCell: UICollectionViewCell {
     }
     
     func setupGalleryCell(url: Photos){
-        if let photoUrl = url.sizes[0].url {
+        if let photoUrl = url.sizes[6].url {
             imageViewCell.sd_setImage(with: URL(string: photoUrl))
         }
         

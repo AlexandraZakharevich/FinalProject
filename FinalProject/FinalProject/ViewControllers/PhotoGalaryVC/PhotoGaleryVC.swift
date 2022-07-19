@@ -113,7 +113,8 @@ class PhotoGaleryVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         let onePhotoVC = OnePhotoVC(nibName: String(describing: OnePhotoVC.self), bundle: nil)
         onePhotoVC.photos = profileGallery[indexPath.row]
 //        onePhotoVC.photos = UIImageView(image: photo) //photo
-        navigationController?.pushViewController(onePhotoVC, animated: true)
+//        navigationController?.pushViewController(onePhotoVC, animated: true)
+        present(onePhotoVC, animated: true)
         
         
     }
